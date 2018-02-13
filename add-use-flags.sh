@@ -31,7 +31,7 @@ dev-util/ycm-generator python_targets_python2_7 -python_targets_python3_5 -pytho
 EOF
 
 cat <<EOF > /etc/portage/package.use/ycmd
-dev-util/ycmd net45 system-clang c c++ objc objc++ -rust python_targets_python3_5 -python_targets_python3_4  python_targets_python2_7 -csharp -debug go -javascript -net46 -netcore10 -omnisharp-roslyn -omnisharp-server python -system-boost -tests
+dev-util/ycmd -net45 system-clang c c++ objc objc++ -rust python_targets_python3_5 -python_targets_python3_4  python_targets_python2_7 -csharp -debug go -javascript -net46 -netcore10 -omnisharp-roslyn -omnisharp-server python -system-boost -tests
 dev-libs/boost python
 dev-lang/rust ycmd
 media-libs/libjpeg-turbo jpeg8
