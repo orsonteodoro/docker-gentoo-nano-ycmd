@@ -4,6 +4,8 @@
 
 This is a container containing nano-ycmd.  It was tested on a host with Alpine Linux.
 
+The image used is based on stage3-amd64-nomultilib but you can use other gentoo images based on your host.
+
 This requires the Docker package to use.
 
 1. `git clone https://github.com/orsonteodoro/docker-gentoo-nano-ycmd.git`
