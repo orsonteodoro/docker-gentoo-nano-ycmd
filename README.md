@@ -15,6 +15,12 @@ This requires the Docker package to use.
 5. `chmod +x run.sh`
 6. `./run.sh`
 
+### FAQ
+
+How do I let the container see the host filesystem?
+
+This will be disclosed later but it you need to modify run.sh to mount a folder or device.
+
 ### Bugs
 
 N/A
