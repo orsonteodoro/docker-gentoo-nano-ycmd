@@ -24,4 +24,4 @@ The some of the files in this repository licensed under either MIT or GPL2.
 Trademarks and copyrights referenced belong to their respective owners.
 
 Software pulled by this container are not in the scope of this license.
-# docker-gentoo-nano-ycmd
+
