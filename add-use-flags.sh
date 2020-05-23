@@ -24,7 +24,7 @@ EOF
 
 cat <<EOF > /etc/portage/package.use/nano-ycmd
 app-editors/nano-ycmd openssl -debug
-# Uncomment if you want less dependencies without pulling llvm, but may affect if it returns GUI documentation or function completion details
+# Uncomment if you want less dependencies, but may affect if it returns GUI documentation or function completion details
 dev-java/icedtea-bin -gtk headless-awt
 # required by icedtea-bin[gtk], mutually exclusive with the above line
 #x11-libs/cairo X
