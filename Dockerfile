@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright (c) 2018 Orson Teodoro
+# Copyright (c) 2018-2020 Orson Teodoro
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -81,6 +81,14 @@ ADD add-licenses.sh /usr/local/bin/add-licenses.sh
 RUN chmod +x /usr/local/bin/add-licenses.sh
 RUN /usr/local/bin/add-licenses.sh
 
+ADD add-envars.sh /usr/local/bin/add-envars.sh
+RUN chmod +x /usr/local/bin/add-envars.sh
+RUN /usr/local/bin/add-envars.sh
+
+ADD edit-make_conf.sh /usr/local/bin/edit-make_conf.sh
+RUN chmod +x /usr/local/bin/edit-make_conf.sh
+RUN /usr/local/bin/edit-make_conf.sh
+
 RUN emerge nano-ycmd --autounmask --autounmask-write || true
 RUN yes | etc-update --automode -3
 RUN emerge nano-ycmd || true
@@ -89,5 +97,5 @@ ADD start-nano-ycmd.sh /usr/local/bin/start-nano-ycmd.sh
 RUN chmod +x /usr/local/bin/start-nano-ycmd.sh
 ENTRYPOINT "/usr/local/bin/start-nano-ycmd.sh"
 
-# For debugging uncomment this block, comment out the above block
+# For debugging uncomment this block, comment out the ENTRYPOINT line.
 #ENTRYPOINT "/bin/bash"

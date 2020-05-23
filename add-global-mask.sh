@@ -1,6 +1,6 @@
 #!/bin/sh
 # gentoo-nano-ycmd - nano-ycmd on Gentoo Docker image
-# Copyright (C) 2018  Orson Teodoro <orsonteodoro@hotmail.com>
+# Copyright (C) 2018-2020  Orson Teodoro <orsonteodoro@hotmail.com>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License

@@ -19,6 +19,8 @@ This requires the Docker package to use.
 
 Before compiling, you can change add-use-flags.sh to support completion for a language you want.
 
+Also change add-envars.sh and edit-make_conf.sh to adjust the number of CPU cores.
+
 ### FAQ
 
 How do I let the container see the host filesystem?

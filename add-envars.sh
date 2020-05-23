@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright (c) 2018-2020 Orson Teodoro
+# Copyright (c) 2020 Orson Teodoro
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -19,8 +19,50 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-echo "travisci=$1"
-travisci="$1"
-if [ -n "$travisci" ]; then
-	#todo
-fi
+mkdir -p /etc/portage/env
+cat <<EOF >> /etc/portage/env/j1.conf
+MAKEOPTS="-j1"
+EOF
+
+cat <<EOF >> /etc/portage/env/j2.conf
+MAKEOPTS="-j2"
+EOF
+
+cat <<EOF >> /etc/portage/env/j3.conf
+MAKEOPTS="-j3"
+EOF
+
+cat <<EOF >> /etc/portage/env/j4.conf
+MAKEOPTS="-j4"
+EOF
+
+cat <<EOF >> /etc/portage/env/j5.conf
+MAKEOPTS="-j5"
+EOF
+
+cat <<EOF >> /etc/portage/env/j6.conf
+MAKEOPTS="-j6"
+EOF
+
+cat <<EOF >> /etc/portage/env/j7.conf
+MAKEOPTS="-j7"
+EOF
+
+cat <<EOF >> /etc/portage/env/j8.conf
+MAKEOPTS="-j8"
+EOF
+
+# Customize to the number of cores on host machine.
+# This tries be more multitasking friendly with host system.
+cat <<EOF >> /etc/portage/package.env
+# .5 * NCORES
+dev-lang/mono j2.conf
+dev-util/ycmd j2.conf
+net-libs/nodejs j2.conf
+sys-devel/clang j2.conf
+sys-devel/llvm j2.conf
+
+# 1 core only
+media-libs/mesa j1.conf
+dev-lang/rust j1.conf
+EOF
