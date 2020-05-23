@@ -22,7 +22,8 @@
 FROM gentoo/portage:latest as portage
 FROM gentoo/stage3-amd64-nomultilib:latest
 
-COPY --from=portage /usr/portage /usr/portage
+#COPY --from=portage /usr/portage /usr/portage
+COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
 MAINTAINER Orson Teodoro <orsonteodoro@hotmail.com>
 
@@ -42,8 +43,7 @@ RUN /usr/bin/add-use-flags.sh
 RUN mkdir -p /etc/portage/repos.conf
 
 RUN layman -S
-RUN yes | layman -a jm-overlay
-RUN yes | layman -a dotnet
+#RUN yes | layman -a dotnet
 
 #some caching bug with docker
 WORKDIR /var/lib/layman/
@@ -52,33 +52,44 @@ RUN echo "$RANDOM" && git clone https://github.com/orsonteodoro/oiledmachine-ove
 WORKDIR /var/lib/layman/
 RUN ln -s /oiledmachine-overlay oiledmachine-overlay
 
-ADD add-oiledmachine-overlay.sh /usr/bin/add-oiledmachine-overlay.sh
-RUN chmod +x /usr/bin/add-oiledmachine-overlay.sh
-RUN /usr/bin/add-oiledmachine-overlay.sh
+ADD add-oiledmachine-overlay.sh /usr/local/bin/add-oiledmachine-overlay.sh
+RUN chmod +x /usr/local/bin/add-oiledmachine-overlay.sh
+RUN /usr/local/bin/add-oiledmachine-overlay.sh
 
-ADD add-keywords.sh /usr/bin/add-keywords.sh
-RUN chmod +x /usr/bin/add-keywords.sh
-RUN /usr/bin/add-keywords.sh
+ADD add-accept_keywords.sh /usr/local/bin/add-accept_keywords.sh
+RUN chmod +x /usr/local/bin/add-accept_keywords.sh
+RUN /usr/local/bin/add-accept_keywords.sh
 
-ADD add-use-dotnet.sh /usr/bin/add-use-dotnet.sh
-RUN chmod +x /usr/bin/add-use-dotnet.sh
-RUN /usr/bin/add-use-dotnet.sh
+ADD add-use-dotnet.sh /usr/local/bin/add-use-dotnet.sh
+RUN chmod +x /usr/local/bin/add-use-dotnet.sh
+RUN /usr/local/bin/add-use-dotnet.sh
 
-ADD add-global-use-flags.sh /usr/bin/add-global-use-flags.sh
-RUN chmod +x /usr/bin/add-global-use-flags.sh
-RUN /usr/bin/add-global-use-flags.sh
+ADD add-global-use-flags.sh /usr/local/bin/add-global-use-flags.sh
+RUN chmod +x /usr/local/bin/add-global-use-flags.sh
+RUN /usr/local/bin/add-global-use-flags.sh
 
 RUN cat /etc/portage/make.conf
 
-RUN touch /etc/portage/categories
-RUN echo "dev-rust" >> /etc/portage/categories
+ADD add-global-mask.sh /usr/local/bin/add-global-mask.sh
+RUN chmod +x /usr/local/bin/add-global-mask.sh
+RUN /usr/local/bin/add-global-mask.sh
+
+ADD add-unmask.sh /usr/local/bin/add-unmask.sh
+RUN chmod +x /usr/local/bin/add-unmask.sh
+RUN /usr/local/bin/add-unmask.sh
+
+ADD add-licenses.sh /usr/local/bin/add-licenses.sh
+RUN chmod +x /usr/local/bin/add-licenses.sh
+RUN /usr/local/bin/add-licenses.sh
 
 RUN emerge nano-ycmd --autounmask --autounmask-write || true
 RUN yes | etc-update --automode -3
 RUN emerge nano-ycmd || true
 
-ADD start-nano-ycmd.sh /usr/bin/start-nano-ycmd.sh
-RUN chmod +x /usr/bin/start-nano-ycmd.sh
-ENTRYPOINT "/usr/bin/start-nano-ycmd.sh"
+ADD start-nano-ycmd.sh /usr/local/bin/start-nano-ycmd.sh
+RUN chmod +x /usr/local/bin/start-nano-ycmd.sh
+ENTRYPOINT "/usr/local/bin/start-nano-ycmd.sh"
 
-
+# For debugging uncomment this block, comment out the above block
+#RUN chmod +x /bin/bash
+#ENTRYPOINT "/bin/bash"

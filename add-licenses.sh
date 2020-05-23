@@ -16,6 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-mkdir -p /etc/portage/package.mask
-cat <<EOF >> /etc/portage/package.mask/layman
+mkdir -p /etc/portage/package.license
+cat <<EOF >> /etc/portage/package.license/ycmd
+dev-util/ycmd all-rights-reserved NAIST-IPADIC Unicode-DFS W3C-document
 EOF

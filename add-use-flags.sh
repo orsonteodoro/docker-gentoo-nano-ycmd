@@ -23,17 +23,19 @@ dev-libs/openssl bindist
 EOF
 
 cat <<EOF > /etc/portage/package.use/nano-ycmd
-app-editors/nano-ycmd openssl -debug ycmd_python2_7
+app-editors/nano-ycmd openssl -debug
+# Uncomment if you want less dependencies without pulling llvm, but may affect if it returns GUI documentation or function completion details
+dev-java/icedtea-bin -gtk headless-awt
+# required by icedtea-bin[gtk], mutually exclusive with the above line
+#x11-libs/cairo X
 EOF
 
 cat <<EOF > /etc/portage/package.use/ycm-generator
-dev-util/ycm-generator python_targets_python2_7 -python_targets_python3_5 -python_targets_python3_5
+dev-util/ycm-generator
 EOF
 
+# You can enable or disable USE flags to support completion for certain languages.  The tradeoff is the compile time cost.
 cat <<EOF > /etc/portage/package.use/ycmd
-dev-util/ycmd -net45 system-clang c c++ objc objc++ -rust python_targets_python3_5 -python_targets_python3_4  python_targets_python2_7 -csharp -debug go -javascript -net46 -netcore10 -omnisharp-roslyn -omnisharp-server python -system-boost -tests
+dev-util/ycmd -c -clangd -csharp -cuda -cxx -go -java -javascript libclang -net472 -objc -objc++ python regex -rust -typescript
 dev-libs/boost python
-dev-lang/rust ycmd
-media-libs/libjpeg-turbo jpeg8
-x11-libs/cairo X
 EOF

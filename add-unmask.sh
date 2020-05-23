@@ -16,6 +16,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-mkdir -p /etc/portage/package.mask
-cat <<EOF >> /etc/portage/package.mask/layman
+mkdir -p /etc/portage/package.unmask
+cat <<EOF >> /etc/portage/package.unmask/ycmd
+dev-util/ycmd::oiledmachine-overlay
+EOF
+
+cat <<EOF >> /etc/portage/package.unmask/nano-ycmd
+app-editors/nano-ycmd::oiledmachine-overlay
+dev-libs/nxjson::oiledmachine-overlay
+dev-util/bear::oiledmachine-overlay
+dev-util/ycm-generator::oiledmachine-overlay
+dev-util/compdb::oiledmachine-overlay
 EOF
