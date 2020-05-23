@@ -52,9 +52,19 @@ cat <<EOF >> /etc/portage/env/j8.conf
 MAKEOPTS="-j8"
 EOF
 
+cat <<EOF >> /etc/portage/env/no-network-sandbox.conf
+FEATURES="-network-sandbox"
+EOF
+
+cat <<EOF >> /etc/portage/package.env
+
+dev-util/ycmd no-network-sandbox.conf
+
+###############################################################
+
 # Customize to the number of cores on host machine.
 # This tries be more multitasking friendly with host system.
-cat <<EOF >> /etc/portage/package.env
+
 # .5 * NCORES
 dev-lang/mono j2.conf
 dev-util/ycmd j2.conf
@@ -66,3 +76,4 @@ sys-devel/llvm j2.conf
 media-libs/mesa j1.conf
 dev-lang/rust j1.conf
 EOF
+
