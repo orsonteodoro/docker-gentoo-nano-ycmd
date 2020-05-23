@@ -90,5 +90,4 @@ RUN chmod +x /usr/local/bin/start-nano-ycmd.sh
 ENTRYPOINT "/usr/local/bin/start-nano-ycmd.sh"
 
 # For debugging uncomment this block, comment out the above block
-#RUN chmod +x /bin/bash
 #ENTRYPOINT "/bin/bash"
