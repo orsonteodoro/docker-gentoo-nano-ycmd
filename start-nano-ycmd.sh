@@ -16,8 +16,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-# uncomment to debug
+# uncomment line below to debug in interactive bash then run compile.sh
 #bash -i
 
-# comment to debug and uncomment above line
+# comment line below to go to production and comment out the above line then run compile.sh
 ynano 2>/tmp/debug.log
