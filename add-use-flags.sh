@@ -36,6 +36,6 @@ EOF
 
 # You can enable or disable USE flags to support completion for certain languages.  The tradeoff is the compile time cost.
 cat <<EOF > /etc/portage/package.use/ycmd
-dev-util/ycmd -c -clangd -csharp -cuda -cxx -go -java -javascript libclang -net472 -objc -objc++ python regex -rust -typescript
+dev-util/ycmd -c -clangd -csharp -cuda -cxx -go -java -javascript -libclang -net472 -objc -objc++ python regex -rust -typescript
 dev-libs/boost python
 EOF
