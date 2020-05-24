@@ -69,11 +69,11 @@ dev-util/ycmd no-network-sandbox.conf
 dev-lang/mono j2.conf
 dev-util/ycmd j2.conf
 net-libs/nodejs j2.conf
-sys-devel/clang j2.conf
-sys-devel/llvm j2.conf
 
 # 1 core only
-media-libs/mesa j1.conf
 dev-lang/rust j1.conf
+media-libs/mesa j1.conf
+sys-devel/clang j1.conf
+sys-devel/llvm j1.conf
 EOF
 
