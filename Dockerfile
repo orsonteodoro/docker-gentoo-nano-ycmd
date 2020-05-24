@@ -97,5 +97,4 @@ ADD start-nano-ycmd.sh /usr/local/bin/start-nano-ycmd.sh
 RUN chmod +x /usr/local/bin/start-nano-ycmd.sh
 ENTRYPOINT "/usr/local/bin/start-nano-ycmd.sh"
 
-# For debugging uncomment this block, comment out the ENTRYPOINT line.
-#ENTRYPOINT "/bin/bash"
+# To go to console shell for debugging, you should edit start-nano-ycmd.sh instead.

@@ -16,4 +16,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-bash -i
+# uncomment to debug
+#bash -i
+
+# comment to debug and uncomment above line
+ynano 2>/tmp/debug.log
