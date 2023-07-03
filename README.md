@@ -2,32 +2,36 @@
 
 [![Build Status](https://travis-ci.org/orsonteodoro/docker-gentoo-nano-ycmd.svg?branch=master)](https://travis-ci.org/orsonteodoro/docker-gentoo-nano-ycmd)
 
-This is a container containing nano-ycmd.  It was tested on a host with Alpine Linux.
+This is a container contains nano-ycmd.
 
-The image used is based on stage3-amd64-nomultilib but you can use other gentoo images based on your host.
+The image used is based on Gentoo's stage3, but it can work on major operating
+systems and distros.
 
 This requires the Docker package to use.
 
-1. `git clone https://github.com/orsonteodoro/docker-gentoo-nano-ycmd.git`
-2. `cd docker-gentoo-nano-ycmd`
-3. `chmod +x compile.sh`
-4. `./compile.sh`
-5. `chmod +x run.sh`
-6. `./run.sh`
+1. Install docker
+2. `git clone https://github.com/orsonteodoro/docker-gentoo-nano-ycmd.git`
+3. `cd docker-gentoo-nano-ycmd`
+4. `chmod +x compile.sh run.sh`
+5. `./compile.sh`
+7. `./run.sh`
 
 ##### 
 
 ### Configuring
 
-Before compiling, you can change add-use-flags.sh to support completion for a language you want.
+Before compiling, you can change add-use-flags.sh to support completion for a
+language you want.
 
-Also change add-envars.sh and edit-make_conf.sh to adjust the number of CPU cores.
+Also change add-envars.sh and edit-make_conf.sh to adjust the number of CPU
+cores.
 
 ### FAQ
 
 How do I let the container see the host filesystem?
 
-This will be disclosed later but it you need to modify run.sh to mount a folder or device.
+This will be disclosed later but it you need to modify run.sh to mount a folder
+or device.
 
 ### Bugs
 
