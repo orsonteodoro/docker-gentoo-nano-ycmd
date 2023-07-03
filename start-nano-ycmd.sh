@@ -21,4 +21,4 @@
 #bash -i
 
 # Comment the line below to go to production and comment out the above line then run compile.sh.
-#ynano 2>/tmp/debug.log
+ynano 2>/tmp/debug.log
