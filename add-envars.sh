@@ -28,28 +28,32 @@ cat <<EOF >> /etc/portage/env/j2.conf
 MAKEOPTS="-j2"
 EOF
 
-cat <<EOF >> /etc/portage/env/j3.conf
-MAKEOPTS="-j3"
-EOF
-
 cat <<EOF >> /etc/portage/env/j4.conf
 MAKEOPTS="-j4"
-EOF
-
-cat <<EOF >> /etc/portage/env/j5.conf
-MAKEOPTS="-j5"
 EOF
 
 cat <<EOF >> /etc/portage/env/j6.conf
 MAKEOPTS="-j6"
 EOF
 
-cat <<EOF >> /etc/portage/env/j7.conf
-MAKEOPTS="-j7"
-EOF
-
 cat <<EOF >> /etc/portage/env/j8.conf
 MAKEOPTS="-j8"
+EOF
+
+cat <<EOF >> /etc/portage/env/j12.conf
+MAKEOPTS="-j12"
+EOF
+
+cat <<EOF >> /etc/portage/env/j16.conf
+MAKEOPTS="-j16"
+EOF
+
+cat <<EOF >> /etc/portage/env/j24.conf
+MAKEOPTS="-j24"
+EOF
+
+cat <<EOF >> /etc/portage/env/j32.conf
+MAKEOPTS="-j32"
 EOF
 
 cat <<EOF >> /etc/portage/env/no-network-sandbox.conf
@@ -76,4 +80,3 @@ media-libs/mesa j1.conf
 sys-devel/clang j1.conf
 sys-devel/llvm j1.conf
 EOF
-

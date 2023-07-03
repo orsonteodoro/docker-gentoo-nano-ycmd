@@ -24,7 +24,7 @@ EOF
 
 cat <<EOF > /etc/portage/package.use/nano-ycmd
 # For better cfamily support remove the - from bear, ninja, ycm-generator
-app-editors/nano-ycmd -bear -debug -ninja openssl -ycm-generator
+app-editors/nano-ycmd -bear -debug fallback-commit libgcrypt -ninja -openssl -ycm-generator ycmd-47
 # Uncomment if you want less dependencies, but may affect if it returns GUI documentation or function completion details
 dev-java/icedtea-bin -gtk headless-awt
 # required by icedtea-bin[gtk], mutually exclusive with the above line

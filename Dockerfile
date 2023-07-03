@@ -20,40 +20,32 @@
 # SOFTWARE.
 
 FROM gentoo/portage:latest as portage
-FROM gentoo/stage3-amd64-nomultilib:latest
 
+# Pick whatever is closest to native
+# See https://github.com/gentoo/gentoo-docker-images/
+FROM gentoo/portage:latest as portage
+FROM gentoo/stage3:latest
 COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
 MAINTAINER Orson Teodoro <orsonteodoro@hotmail.com>
 
-RUN emerge dev-vcs/git
+ADD make.conf /etc/portage/make.conf
 
+RUN emerge dev-vcs/git
 
 ADD add-mask.sh /usr/bin/add-mask.sh
 RUN chmod +x /usr/bin/add-mask.sh
 RUN /usr/bin/add-mask.sh
 
-RUN emerge layman
-
 ADD add-use-flags.sh /usr/bin/add-use-flags.sh
 RUN chmod +x /usr/bin/add-use-flags.sh
 RUN /usr/bin/add-use-flags.sh
 
-RUN mkdir -p /etc/portage/repos.conf
+#RUN mkdir -p /etc/portage/repos.conf
+RUN emerge app-eselect/eselect-repository
 
-RUN layman -S
-#RUN yes | layman -a dotnet
-
-#some caching bug with docker
-WORKDIR /var/lib/layman/
-RUN echo "$RANDOM" && git clone https://github.com/orsonteodoro/oiledmachine-overlay.git /var/lib/layman/oiledmachine-overlay
-
-WORKDIR /var/lib/layman/
-RUN ln -s /oiledmachine-overlay oiledmachine-overlay
-
-ADD add-oiledmachine-overlay.sh /usr/local/bin/add-oiledmachine-overlay.sh
-RUN chmod +x /usr/local/bin/add-oiledmachine-overlay.sh
-RUN /usr/local/bin/add-oiledmachine-overlay.sh
+RUN eselect repository add "oiledmachine-overlay" "git" "https://github.com/orsonteodoro/oiledmachine-overlay.git"
+RUN emaint sync -r oiledmachine-overlay
 
 ADD add-accept_keywords.sh /usr/local/bin/add-accept_keywords.sh
 RUN chmod +x /usr/local/bin/add-accept_keywords.sh
@@ -66,8 +58,6 @@ RUN /usr/local/bin/add-use-dotnet.sh
 ADD add-global-use-flags.sh /usr/local/bin/add-global-use-flags.sh
 RUN chmod +x /usr/local/bin/add-global-use-flags.sh
 RUN /usr/local/bin/add-global-use-flags.sh
-
-RUN cat /etc/portage/make.conf
 
 ADD add-global-mask.sh /usr/local/bin/add-global-mask.sh
 RUN chmod +x /usr/local/bin/add-global-mask.sh
