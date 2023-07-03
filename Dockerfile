@@ -79,9 +79,11 @@ ADD edit-make_conf.sh /usr/local/bin/edit-make_conf.sh
 RUN chmod +x /usr/local/bin/edit-make_conf.sh
 RUN /usr/local/bin/edit-make_conf.sh
 
-RUN emerge nano-ycmd --autounmask --autounmask-write || true
+RUN emerge nano-ycmd --autounmask --autounmask-write
 RUN yes | etc-update --automode -3
-RUN emerge nano-ycmd || true
+
+RUN ls /usr/lib/python*/site-packages/ycmd/47/ycmd
+RUN which ynano
 
 ADD start-nano-ycmd.sh /usr/local/bin/start-nano-ycmd.sh
 RUN chmod +x /usr/local/bin/start-nano-ycmd.sh

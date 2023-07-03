@@ -18,5 +18,5 @@
 
 mkdir -p /etc/portage/package.license
 cat <<EOF >> /etc/portage/package.license/ycmd
-dev-util/ycmd all-rights-reserved NAIST-IPADIC Unicode-DFS W3C-document
+dev-util/ycmd all-rights-reserved NAIST-IPADIC Unicode-DFS W3C-document DOTNET-libraries-and-runtime-components-patents Mono-patents
 EOF

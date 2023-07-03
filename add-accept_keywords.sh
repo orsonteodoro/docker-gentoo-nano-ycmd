@@ -18,12 +18,12 @@
 
 mkdir -p /etc/portage/package.accept_keywords
 cat <<EOF >> /etc/portage/package.accept_keywords/ycmd
-=dev-util/ycmd-47*::oiledmachine-overlay ~*
+=dev-util/ycmd-47*::oiledmachine-overlay ~* **
 EOF
 
 cat <<EOF >> /etc/portage/package.accept_keywords/nano-ycmd
 =app-editors/nano-ycmd-9999::oiledmachine-overlay ~*
-dev-libs/nxjson::oiledmachine-overlay ~*
+dev-libs/nxjson::oiledmachine-overlay ~* **
 dev-util/bear::oiledmachine-overlay ~*
 dev-util/ycm-generator::oiledmachine-overlay ~*
 dev-util/compdb::oiledmachine-overlay ~*
