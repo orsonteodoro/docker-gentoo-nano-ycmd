@@ -44,8 +44,9 @@ RUN /usr/bin/add-use-flags.sh
 #RUN mkdir -p /etc/portage/repos.conf
 RUN emerge app-eselect/eselect-repository
 
-# Invalidate cache after bump
-ADD https://api.github.com/repos/orsonteodoro/oiledmachine-overlay/git/refs/heads/master oiledmachine-overlay-master-head-commit.json
+# Invalidate cache for new commits
+RUN mkdir -p /var/cache/docker-gentoo-nano-ycmd
+ADD https://api.github.com/repos/orsonteodoro/oiledmachine-overlay/git/refs/heads/master /var/cache/docker-gentoo-nano-ycmd/oiledmachine-overlay-master-latest-commit.json
 RUN eselect repository add "oiledmachine-overlay" "git" "https://github.com/orsonteodoro/oiledmachine-overlay.git"
 
 RUN emaint sync -r oiledmachine-overlay
@@ -82,8 +83,9 @@ ADD edit-make_conf.sh /usr/local/bin/edit-make_conf.sh
 RUN chmod +x /usr/local/bin/edit-make_conf.sh
 RUN /usr/local/bin/edit-make_conf.sh
 
-# Invalidate cache after bump
-ADD https://api.github.com/repos/orsonteodoro/nano-ycmd/git/refs/heads/ymcd-code-completion nano-ycmd-ymcd-code-completion-head-commit.json
+# Invalidate cache for new commits
+ADD https://api.github.com/repos/orsonteodoro/nano-ycmd/git/refs/heads/ymcd-code-completion /var/cache/docker-gentoo-nano-ycmd/nano-ycmd-ymcd-code-completion-latest-commit.json
+
 RUN emerge nano-ycmd --autounmask --autounmask-write
 
 RUN yes | etc-update --automode -3
