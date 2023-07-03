@@ -1,7 +1,5 @@
 # docker-gentoo-nano-ycmd
 
-[![Build Status](https://travis-ci.org/orsonteodoro/docker-gentoo-nano-ycmd.svg?branch=master)](https://travis-ci.org/orsonteodoro/docker-gentoo-nano-ycmd)
-
 This is a container contains nano-ycmd.
 
 The image used is based on Gentoo's stage3, but it can work on major operating
@@ -36,6 +34,10 @@ or device.
 ### Bugs
 
 N/A
+
+### Test history
+
+* Jul 3, 2023, docker-gentoo-nano-ycmd (6fe7290), ycmd 47 (3392251), nano-ycmd (1d09284),  interactive test, PASSED
 
 ### License
 
