@@ -14,6 +14,8 @@ This requires the Docker package to use.
 5. `./compile.sh`
 7. `./run.sh`
 
+* Windows users can use cygwin for bash support or manually run the commands.
+
 ##### 
 
 ### Configuring
