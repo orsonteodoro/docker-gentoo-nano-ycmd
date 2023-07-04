@@ -43,4 +43,5 @@ docker run \
 	-e AUDIO_GID=$AUDIO_GID \
 	-e ALSA_CARD="$ALSA_CARD" \
 	--device /dev/snd \
+	--log-driver "local" --log-opt max-size=10m \
 	-t docker-gentoo-nano-ycmd bash "$@"
