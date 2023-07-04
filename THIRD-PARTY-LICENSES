@@ -5,6 +5,7 @@ in front of the line.
 2. Run ./build.sh
 3. Run ./run.sh
 3. Unpack tarballs in /var/cache/distfiles
+(If the tarball is not present, use "emerge -f <packagename>" to obtain it.)
 4. License templates can be found in both
 
   https://github.com/gentoo-mirror/gentoo/tree/stable/licenses
