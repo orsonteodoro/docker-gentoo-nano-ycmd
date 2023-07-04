@@ -1,6 +1,7 @@
 # docker-gentoo-nano-ycmd
 
-This is a container contains nano-ycmd.
+This is a container contains
+[nano-ycmd](https://github.com/orsonteodoro/nano-ycmd).
 
 The image used is based on Gentoo's stage3, but it can work on major operating
 systems and distros.
