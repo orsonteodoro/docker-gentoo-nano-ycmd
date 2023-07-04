@@ -59,7 +59,7 @@ Example
 YNANO_CHDIR="/home/johndoe" ./run.sh hello.py world.py
 ```
 
-When I build it gets stuck with the message "[output clipped, log limit 2MiB reached]":
+When I build it, it gets stuck with the message "[output clipped, log limit 2MiB reached]":
 
 See https://docs.docker.com/config/containers/logging/local/#usage
 
