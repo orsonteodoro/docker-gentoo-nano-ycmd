@@ -18,7 +18,7 @@
 
 # Uncomment the line below to debug in interactive bash then run compile.sh.
 # No commands following start-nano-ycmd.sh in Dockerfile should exist for this to work.
-#bash -i
+#bash -i "$@"
 
 # Comment the line below to go to production and comment out the above line then run compile.sh.
-ynano 2>/tmp/debug.log
+ynano "$@" 2>/tmp/debug.log
