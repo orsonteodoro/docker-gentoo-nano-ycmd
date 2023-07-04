@@ -23,7 +23,7 @@ app-containers/containerd[seccomp] \
 app-containers/docker[seccomp] \
 app-containers/docker-buildx \
 app-containers/docker-cli \
-app-containers/runc[seccomp] \
+app-containers/runc[seccomp]
 ```
 * Custom kernel users need the following kernel settings:
 https://wiki.gentoo.org/wiki/Docker#Kernel
