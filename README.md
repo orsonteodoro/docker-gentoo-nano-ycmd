@@ -15,7 +15,19 @@ This requires the Docker package to use.
 5. `./compile.sh`
 7. `./run.sh`
 
-* Windows users can use cygwin for bash support or manually run the commands.
+* Windows users can use Cygwin for bash support or manually run the commands.
+* The following USE flags and packages are needed:
+```
+emerge -1vuDN \
+app-containers/containerd[seccomp] \
+app-containers/docker[seccomp] \
+app-containers/docker-buildx \
+app-containers/docker-cli \
+app-containers/runc[seccomp] \
+```
+* Custom kernel users need the following kernel settings:
+https://wiki.gentoo.org/wiki/Docker#Kernel
+* You need to add the user to the docker group.
 
 ##### 
 
