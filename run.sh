@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Copyright (c) 2018-2020 Orson Teodoro
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,8 +27,15 @@ ALSA_CARD="hw:0,0"
 
 USE_CONTAINER_PULSEAUDIO=
 
+extra_args=()
+
+if [[ -n "${YNANO_CHDIR}" ]] ; then
+	extra_args+=( -e "${YNANO_CHDIR}" )
+fi
+
 docker run \
 	-i \
+	"${extra_args[@]}" \
 	-e DISPLAY="$DISPLAY" \
 	-v /tmp/.X11-unix:/tmp/.X11-unix:ro \
 	-v /run/user/$USER_UID/pulse:/run/user/$USER_UID/pulse  \

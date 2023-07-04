@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # gentoo-nano-ycmd - nano-ycmd on Gentoo Docker image
 # Copyright (C) 2018-2020  Orson Teodoro <orsonteodoro@hotmail.com>
 #
@@ -15,6 +15,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+if [[ -n "${YNANO_CHDIR}" ]] ; then
+	cd "${YNANO_CHDIR}" || exit 1
+fi
 
 # Uncomment the line below to debug in interactive bash then run compile.sh.
 # No commands following start-nano-ycmd.sh in Dockerfile should exist for this to work.
