@@ -33,6 +33,26 @@ How do I let the container see the host filesystem?
 This will be disclosed later but it you need to modify run.sh to mount a folder
 or device.
 
+How do I update the container?
+
+Re-run `compile.sh`
+
+How do I access files on the host OS?
+
+Modify `./run.sh` and add -v path1:path2, where path1 is the host path, and
+path2 is the container path.
+
+Example
+
+```
+docker run \
+	-v /home/johndoe:/home/johndoe \
+	-v /mnt/usb:/mnt/usb \
+	...
+```
+
+Use `Ctrl+r` then `Ctrl+t` to point to the path of the file.
+
 ### Bugs
 
 N/A
