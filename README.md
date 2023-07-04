@@ -48,6 +48,16 @@ docker run \
 
 Use `Ctrl+r` then `Ctrl+t` to point to the path of the file inside nano-ycmd.
 
+or
+
+Pass the path as args to `run.sh`.
+
+Example
+
+```
+YNANO_CHDIR="/home/johndoe" ./run.sh hello.py world.py
+```
+
 ### Bugs
 
 N/A
