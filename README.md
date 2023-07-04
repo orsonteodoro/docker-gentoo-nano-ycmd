@@ -46,7 +46,7 @@ docker run \
 	...
 ```
 
-Use `Ctrl+r` then `Ctrl+t` to point to the path of the file.
+Use `Ctrl+r` then `Ctrl+t` to point to the path of the file inside nano-ycmd.
 
 ### Bugs
 
