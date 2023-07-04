@@ -69,7 +69,7 @@ N/A
 
 ### Test history
 
-* Jul 3, 2023, docker-gentoo-nano-ycmd (6fe7290), ycmd 47 (3392251), nano-ycmd (1d09284),  interactive test, PASSED
+* Jul 3, 2023, docker-gentoo-nano-ycmd (03c8e6f), ycmd 47 (3392251), nano-ycmd (a4e39ed),  interactive test, PASSED
 
 ### License
 
