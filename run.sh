@@ -30,7 +30,7 @@ USE_CONTAINER_PULSEAUDIO=
 extra_args=()
 
 if [[ -n "${YNANO_CHDIR}" ]] ; then
-	extra_args+=( -e "${YNANO_CHDIR}" )
+	extra_args+=( -e YNANO_CHDIR="${YNANO_CHDIR}" )
 fi
 
 docker run \

@@ -95,6 +95,6 @@ RUN which ynano
 
 ADD start-nano-ycmd.sh /usr/local/bin/start-nano-ycmd.sh
 RUN chmod +x /usr/local/bin/start-nano-ycmd.sh
-ENTRYPOINT "/usr/local/bin/start-nano-ycmd.sh"
+ENTRYPOINT ["/usr/local/bin/start-nano-ycmd.sh"]
 
 # To go to console shell for debugging, you should edit start-nano-ycmd.sh instead.
