@@ -15,6 +15,13 @@ The gentoo-docker-images source code can be found at:
 
   https://github.com/gentoo/gentoo-docker-images/
 
+The packages listed and their licenses may change over time due to technical
+issues such lack of tagging or lack of lockfile functionality.
+
+To obtain an updated list use the following one liner inside the container:
+
+for f in $(find /var/db/pkg/ -name "LICENSE") ; do echo "PATH: ${f};  LICENSE:  "$(cat "${f}") ; done | sort
+
 License names:
 
 PATH: /var/db/pkg/app-admin/eselect-1.4.22-r1/LICENSE;  LICENSE:  GPL-2+ || ( GPL-2+ CC-BY-SA-4.0 )
