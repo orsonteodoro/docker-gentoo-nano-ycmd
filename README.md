@@ -60,7 +60,7 @@ YNANO_CHDIR="/home/johndoe" ./run.sh hello.py world.py
 ```
 
 When I build it, it gets stuck with the message
-"[output clipped, log limit 2MiB reached]".  How do i fix it?
+"[output clipped, log limit 2MiB reached]".  How do I fix it?
 
 See https://docs.docker.com/config/containers/logging/local/#usage
 
