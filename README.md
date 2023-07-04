@@ -28,11 +28,6 @@ cores.
 
 ### FAQ
 
-How do I let the container see the host filesystem?
-
-This will be disclosed later but it you need to modify run.sh to mount a folder
-or device.
-
 How do I update the container?
 
 Re-run `compile.sh`
