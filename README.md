@@ -42,11 +42,11 @@ cores.
 
 ### FAQ
 
-How do I update the container?
+#### How do I update the container?
 
 Re-run `compile.sh`
 
-How do I access files on the host OS?
+#### How do I access files on the host OS?
 
 Modify `./run.sh` and add -v path1:path2, where path1 is the host path, and
 path2 is the container path.
@@ -72,7 +72,7 @@ Example
 YNANO_CHDIR="/home/johndoe" ./run.sh hello.py world.py
 ```
 
-When I build it, it gets stuck with the message
+#### When I build it, it gets stuck with the message.  How do I fix it?
 "[output clipped, log limit 2MiB reached]".  How do I fix it?
 
 ```
