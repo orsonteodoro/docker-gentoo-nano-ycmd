@@ -27,7 +27,8 @@ app-containers/runc[seccomp]
 ```
 * Custom kernel users need the following kernel settings:
 https://wiki.gentoo.org/wiki/Docker#Kernel
-* You need to add the user to the docker group.
+* The user needs to be added the docker group.
+* The daemon service needs to be started.
 
 ##### 
 
