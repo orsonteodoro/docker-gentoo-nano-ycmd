@@ -44,14 +44,14 @@ cores.
 
 #### How do I update the container?
 
-Re-run `compile.sh`
+Re-run `compile.sh`.
 
 #### How do I access files on the host OS?
 
 Modify `./run.sh` and add -v path1:path2, where path1 is the host path, and
 path2 is the container path.
 
-Example
+Example:
 
 ```
 docker run \
@@ -66,14 +66,13 @@ or
 
 Pass the path as args to `run.sh`.
 
-Example
+Example:
 
 ```
 YNANO_CHDIR="/home/johndoe" ./run.sh hello.py world.py
 ```
 
-#### When I build it, it gets stuck with the message.  How do I fix it?
-"[output clipped, log limit 2MiB reached]".  How do I fix it?
+#### When I build it, it gets stuck with the message.  "[output clipped, log limit 2MiB reached]".  How do I fix it?
 
 ```
 docker ps -a --no-trunc
