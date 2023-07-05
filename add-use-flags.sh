@@ -18,6 +18,10 @@
 
 mkdir -p /etc/portage/package.use
 
+cat <<EOF > /etc/portage/package.use/nxjson
+dev-libs/nxjson fallback-commit
+EOF
+
 cat <<EOF > /etc/portage/package.use/openssh
 dev-libs/openssl bindist
 EOF
