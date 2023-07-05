@@ -6,14 +6,14 @@ This is a container contains
 The image used is based on Gentoo's stage3, but it can work on major operating
 systems and distros.
 
-This requires the Docker package to use.
+### Building the Docker image and running it
 
 1. Install docker
 2. `git clone https://github.com/orsonteodoro/docker-gentoo-nano-ycmd.git`
 3. `cd docker-gentoo-nano-ycmd`
 4. `chmod +x compile.sh run.sh`
 5. `./compile.sh`
-7. `./run.sh`
+6. `./run.sh`
 
 * Windows users can use Cygwin for bash support or manually run the commands.
 * The following USE flags and packages are needed:
