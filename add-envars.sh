@@ -77,6 +77,6 @@ net-libs/nodejs j2.conf
 # 1 core only
 dev-lang/rust j1.conf
 media-libs/mesa j1.conf
-sys-devel/clang j1.conf
-sys-devel/llvm j1.conf
+llvm-core/clang j1.conf
+llvm-core/llvm j1.conf
 EOF
